@@ -8,7 +8,9 @@ export async function sendVerificationEmail(
     // this function is returning promise which is of type ApiResponse(it should have all field which are their in ApiResponse)
 ):Promise<ApiResponse>{
     try {
+        console.log("Email is" ,email);
         await resend.emails.send({
+         
             from: 'onboarding@resend.dev',
             to: email,
             subject: 'Verification code for Anonymous sender',
@@ -17,6 +19,7 @@ export async function sendVerificationEmail(
         return {
             success:true,
             message:"Verification code sent successfully. 🎉"
+            
         }
         
     } catch (error) {
