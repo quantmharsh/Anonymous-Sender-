@@ -15,6 +15,7 @@ export async  function GET(request:Request)
 {
     await dbConnect();
     try {
+        //we are getting all parameters 
 
         const{searchParams}= new URL(request.url)
         const queryParam={
